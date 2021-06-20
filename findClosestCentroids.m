@@ -22,6 +22,15 @@ idx = zeros(size(X,1), 1);
 %
 
 
+valor = zeros(size(X,1),K);
+for i = 1:size(X,1)
+   for j = 1:K         
+       valor(i,j) = sqrt(sum((X(i,:)- centroids(j,:)).^2))^2;
+      
+   end   
+end
+[val, idx] = min(valor,[],2)
+
 
 
 
